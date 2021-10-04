@@ -24,24 +24,6 @@ class App extends Component {
     this.getKaryawan();
   }
 
-  deleteKaryawan = (indexHapus) => {
-    if (window.confirm("Apakah anda yakin ingin menghapus data ini ?")) {
-
-      if (indexHapus !== -1) {
-        let dataKaryawan = this.state.karyawan
-        dataKaryawan.splice(indexHapus, 1);
-        this.setState({
-          karyawan: dataKaryawan
-        })
-        this.props.history.push("")
-      } else {
-        alert("Gagal dihapus!!");
-      }
-
-    }
-
-  }
-
   render() {
     return (
       <>
@@ -137,7 +119,7 @@ class App extends Component {
                                       <td>{b.limitRembers}</td>
                                       <td>{b.createdAt}</td>
                                       <td>{b.updatedAt}</td>
-                                      <td><button onClick={() => { this.deleteKaryawan(index) }} data-toggle="tooltip" className="btn btn-danger waves-effect waves-light tombol-hapus" data-original-title="Hapus"><span className="icon-label"><i className="fa fa-trash" /> </span><span className="btn-text" /></button></td>
+                                      <td><a href="">Edit</a> | <a href="">Hapus</a></td>
                                     </tr>
 
                                   )
